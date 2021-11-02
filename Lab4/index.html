@@ -33,14 +33,19 @@
     <script>
         $(document).ready(function(){
             $.ajax({
-    
                 type: 'GET',
                 async: false,
                 timeout: 5000,
-                success: function(){
-                    document.getElementById("image").src = "Cars2.png"
-                }
+                fail:function(){
+                    return true;
+                },
+                done: function(){
+                    const xhttp = new XMLHttpRequest();
+                    xhttp.onnload = function(){
+                        document.getElementById("image").src = "Cars4.png";
+                    }
 
+                }
             })
         });
     </script>
