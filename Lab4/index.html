@@ -35,7 +35,20 @@
     
     <script type="text/javascript">
         $(document).ready(function(){
-           $("#ajax").html('<img src="cars1.png"></img>') 
+           i = 1
+           while (i==1){
+            $("#ajax").html('<img src="cars1.png"></img>') 
+            await delay(5)
+            $("#ajax").html('<img src="cars2.png"></img>') 
+            await delay(5)
+            $("#ajax").html('<img src="cars3.png"></img>') 
+            await delay(5)
+            $("#ajax").html('<img src="cars4.png"></img>') 
+            await delay(5)
+            $("#ajax").html('<img src="squid1.png"></img>') 
+            await delay(5)
+           }
+            
         });
         
         
