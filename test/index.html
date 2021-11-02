@@ -102,12 +102,13 @@
     <script>
         $(document).ready(function () {
 
-            $('.my-slide').find('.messages h3').text("Welcome Professor");
+            $('.my-slide').addClass("slide-5").find('.messages h3').text("Welcome Professor");
             setInterval(function () {
                 $('.my-slide').addClass("slide-1").find('.messages h3').text("There's a Total of 4 Images");
                 $('.my-slide').removeClass("slide-2");
                 $('.my-slide').removeClass("slide-3");
                 $('.my-slide').removeClass("slide-4");
+                $('.my-slide').removeClass("slide-5");
             }, 20000);
             
             setInterval(function () {
