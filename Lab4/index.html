@@ -9,36 +9,49 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--<style>
-        #slideshow {
-            margin: 50px auto;
-            position: relative;
-            padding: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
 
-        #slideshow>div {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
+        .content {
+            height: 400px;
+            width: 750px;
+            overflow: hidden;
+            box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.4);
         }
-    </style>-->
-    
+
+        .content .images {
+            height: 100%;
+            width: 100%;
+        }
+
+        .images img {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+
     <script>
         $(document).ready(function () {
-            $("#slideshow > div:gt(0)").hide();
-
-            setInterval(function () {
-                $('#slideshow > div:first')
-                    .fadeOut(1000)
-                    .next()
-                    .fadeIn(1000)
-                    .end()
-                    .appendTo('#slideshow');
-            }, 3000);
-        });
+            var indexValue = 0;
+            function slideShow() {
+                setTimeout(slideShow, 2500);
+                var x;
+                const img = document.querySelectorAll("img");
+                for (x = 0; x < img.length; x++) {
+                    img[x].style.display = "none";
+                }
+                indexValue++;
+                if (indexValue > img.length) { indexValue = 1 }
+                img[indexValue - 1].style.display = "block";
+            }
+            slideShow();
     </script>
 
 </head>
@@ -63,18 +76,13 @@
         </div>
     </nav>
 
-    <div id="slideshow">
-        <div>
+    <div class="content">
+        <div class="images">
             <img src="cars1.png">
-        </div>
-        <div>
             <img src="Cars2.png">
-        </div>
-        <div>
             <img src="Cars3.png">
-        </div>
-        <div>
             <img src="Cars4.png">
+            <img src="squid1.png">
         </div>
     </div>
 
