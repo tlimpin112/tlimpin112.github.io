@@ -25,6 +25,22 @@
             bottom: 10px;
         }
     </style>
+    
+    <script>
+        $(document).ready(function () {
+            $("#slideshow > div:gt(0)").hide();
+
+            setInterval(function () {
+                $('#slideshow > div:first')
+                    .fadeOut(1000)
+                    .next()
+                    .fadeIn(1000)
+                    .end()
+                    .appendTo('#slideshow');
+            }, 3000);
+        });
+    </script>
+    
 </head>
 
 <body>
@@ -62,21 +78,8 @@
         </div>
     </div>
 
-    <script>
-        $(document).ready(function () {
-            $("#slideshow > div:gt(0)").hide();
 
-            setInterval(function () {
-                $('#slideshow > div:first')
-                    .fadeOut(1000)
-                    .next()
-                    .fadeIn(1000)
-                    .end()
-                    .appendTo('#slideshow');
-            }, 3000);
-        });
-    </script>
-    
+
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
