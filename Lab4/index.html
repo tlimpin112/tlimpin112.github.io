@@ -32,14 +32,16 @@
     <div id="image"><img src="squid1.png" alt="squidgame"></div>
     <script>
         $(document).ready(function(){
-            function loadDoc(){
-                const xhttp = new XMLHttpRequest();
-                xhttp.onload = function(){
-                    document.getElementById("image").innerHTML = this.responseURL;
+            $.ajax({
+    
+                type: 'GET',
+                async: false,
+                timeout: 5000,
+                success: function(){
+                    document.getElementById("image").src = "Cars2.png"
                 }
-                xhttp.open("GET", "Cars4.png");
-                xhttp.send();
-            }
+
+            })
         });
     </script>
 
