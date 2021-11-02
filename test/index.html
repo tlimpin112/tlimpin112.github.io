@@ -94,7 +94,6 @@
             </h3>
         </div>
     </div>
-    <div class="other-content">Other content</div>
     
     <script>
         $(document).ready(function () {
@@ -105,21 +104,21 @@
                 $('.my-slide').removeClass("slide-2");
                 $('.my-slide').removeClass("slide-3");
                 $('.my-slide').removeClass("slide-4");
-            }, 2000);
+            }, 500);
             
             setInterval(function () {
                 $('.my-slide').addClass("slide-2").find('.messages h3').text("Homies 2");;
                 $('.my-slide').removeClass("slide-1");
                 $('.my-slide').removeClass("slide-3");
                 $('.my-slide').removeClass("slide-4");
-            }, 2000);
+            }, 1000);
             
             setInterval(function () {
                 $('.my-slide').addClass("slide-3").find('.messages h3').text("Homies 3");;
                 $('.my-slide').removeClass("slide-1");
                 $('.my-slide').removeClass("slide-2");
                 $('.my-slide').removeClass("slide-4");
-            }, 2000);
+            }, 1500);
             
             setInterval(function () {
                 $('.my-slide').addClass("slide-4").find('.messages h3').text("Homies 4");;
