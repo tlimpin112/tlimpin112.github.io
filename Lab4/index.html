@@ -29,8 +29,19 @@
         </div>
     </nav>
 
-    <div id="image"><img src="squid1.png"></div>
-
+    <div id="image"><img src="squid1.png" alt="squidgame"></div>
+    <script>
+        $(document).ready(function(){
+            function loadDoc(){
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function(){
+                    document.getElementById("image").innerHTML = this.responseURL;
+                }
+                xhttp.open("GET", "Cars4.png");
+                xhttp.send();
+            }
+        });
+    </script>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
