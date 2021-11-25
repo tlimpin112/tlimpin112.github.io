@@ -1,5 +1,6 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
+const port = 3000
 
 app.use(express.json() );       // to support JSON-encoded bodies
 app.use(express.urlencoded({     // to support URL-encoded bodies
@@ -48,4 +49,4 @@ app.post('/users/adduser', function(req, res){
 );
 
 
-app.listen(3000);
+app.listen(port);
