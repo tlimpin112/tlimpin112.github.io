@@ -7,7 +7,7 @@ loginButton.addEventListener("click", (e) => {
     const username = loginForm.username.value;
     const password = loginForm.password.value;
 
-    if (username === "user" && password === "admin") {
+    if (username === "user" && password === "admin1") {
         alert("You have successfully logged in.");
         location.replace("http://www.youtube.com");
     } else {
