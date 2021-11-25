@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="search.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <main id="mainholder">
+        <h1 style="position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);">IPGeolocation</h1>
+        <div class="wrap">
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="Insert IP Adress to convert it to map it!"
+                    style="text-align: center;">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+    <script>
+        const settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://ip-geo-location.p.rapidapi.com/ip/23.123.12.11?format=json",
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "ip-geo-location.p.rapidapi.com",
+                "x-rapidapi-key": "SIGN-UP-FOR-KEY"
+            }
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    </script>
+</body>
+
+</html>
