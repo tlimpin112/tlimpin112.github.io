@@ -10,7 +10,6 @@ loginButton.addEventListener("click", (e) => {
     if (username === "user" && password === "admin1") {
         alert("You have successfully logged in.");
         location.replace("https://tlimpin112.github.io/search/");
-        
     } else {
         loginErrorMsg.style.opacity = 1;
     }
