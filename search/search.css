@@ -45,7 +45,7 @@ body{
   border: 3px solid #000000;
   background: #00B4CC;
   background: url(glass.png);
-  background-size: cover;
+  background-size: 30px;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
