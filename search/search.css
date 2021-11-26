@@ -22,12 +22,14 @@ body{
     box-shadow: 0px 0px 5px 2px black;
   }
 
+#map { height: 400px; }
+
 .searchTerm {
   width: 100%;
   border: 3px solid #000000;
   border-right: none;
   padding: 5px;
-  height: 20px;
+  height: 40px;
   border-radius: 5px 0 0 5px;
   outline: none;
   color: #9DBFAF;
@@ -39,9 +41,11 @@ body{
 
 .searchButton {
   width: 40px;
-  height: 36px;
-  border: 1px solid #000000;
+  height: 40px;
+  border: 3px solid #000000;
   background: #00B4CC;
+  background: url(glass.png);
+  background-size: cover;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
