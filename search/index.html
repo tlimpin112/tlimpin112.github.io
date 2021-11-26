@@ -6,41 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="search.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="search.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Document</title>
 </head>
 
 <body>
-    <main id="mainholder">
-        <h1 style="position: absolute;
+    <div class="container">
+        <div id="formattedaddlat"></div>
+        <div id='formattedaddlong'></div>
+    </div>
+    <h1 style="position: absolute;
     top: 43%;
     left: 50%;
     transform: translate(-50%, -50%);">IPGeolocation</h1>
-        <div class="wrap">
-            <div class="search">
-                <input type="text" class="searchTerm" placeholder="Insert IP Adress to convert it to map it!"
-                    style="text-align: center;">
-                <button type="submit" class="searchButton">
-                    <i class="fa fa-search"></i>
-                </button>
-            </div>
+    <div class="wrap">
+        <div class="search">
+            <input type="text" class="searchTerm" placeholder="Insert IP Adress to convert it to map it!"
+                style="text-align: center;" id="ipinput">
+            <button type="submit" class="searchButton" id="searchbutton">
+                <i class="fa fa-search"></i>
+            </button>
         </div>
-    </main>
-    <script>
-        const settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://ip-geo-location.p.rapidapi.com/ip/23.123.12.11?format=json",
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "ip-geo-location.p.rapidapi.com",
-                "x-rapidapi-key": "SIGN-UP-FOR-KEY"
-            }
-        };
+    </div>
+    </div>
 
-        $.ajax(settings).done(function (response) {
-            console.log(response);
+
+    <script>
+        $(document).ready(function () {
+            $('#searchbutton').click(function () {
+                geocode();
+            });
+            $('#ipinput').keypress(function(event){
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if(keycode == '13'){
+                    geocode();  
+                }
+                //Stop the event from propogation to other handlers
+                //If this line will be removed, then keypress event handler attached 
+                //at document level will also be triggered
+                event.stopPropagation();
+            });
         });
+
     </script>
 </body>
 

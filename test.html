@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id='formattedaddlat'></div>
+        <div id='formattedaddlong'></div>
+    </div>
+    <script>
+        geocode();
+        function geocode(){
+            var location = '8.8.8.8';
+            axios.get('https://api.ipfind.com/',{
+                params:{
+                    ip: location,
+                    auth:'efb0771c-9a9f-4a3f-808a-8dfaa1ee937d'
+                }
+            })
+            .then(function(response){
+                console.log(response)
+        
+                //formatted address
+                var lat = response.data.latitude;
+                var latOutput = `
+                    <ul class = "list-group">
+                        <li class = "list-group-item">${lat}</li>
+                    </ul>
+                `;
+                var long = response.data.longitude;
+                var longOutput = `
+                    <ul class = "list-group">
+                        <li class = "list-group-item">${long}</li>
+                    </ul>
+                `;
+                
+                //output to app
+                document.getElementById('formattedaddlat').innerHTML=latOutput
+                document.getElementById('formattedaddlong').innerHTML=longOutput
+                
+            })
+            .catch(function(error){
+                console.log(error);
+            });
+        }
+    </script>
+</body>
+</html>
