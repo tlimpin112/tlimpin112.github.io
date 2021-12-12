@@ -35,7 +35,7 @@
     </div>
     <a class="nav-link active" href="/" style="text-align: center;"> Login</a>
   </form>
-
+  
   <script>function registered() {
       // check if input is bigger than 3
       var pass = document.getElementById('password').value;
@@ -54,7 +54,7 @@
       // else form is good let it submit, of course you will 
       // probably want to alert the user WHAT went wrong.
       alert("You have successfully signed up!")
-      return true;
+      window.location.href("/")
       
     }
   </script>
